@@ -1,32 +1,50 @@
 // complete this js code
+class Rectangle {
+	constructor(width,height){
+		this._width=width;
+		this._height=height	
+        
+	}
+    get width(){
+	return  this._width;
+	}
+	set width(width){
+		this._width=width;
+	}
+    get height(){
+       return this._height;
+       }
+	   set height(height){
+		this._height=height;	
+	   }
+       
+	getArea(){
+		    return this._width * this._height;;
+	}
+}
 
-class Person {
-    constructor(name,age) {
-        this.pername=name;
-        this.pernage=age;
-    }
-    jobGreet() {
-      return `Hello, my name is ${this.pername}, I am ${this.pernage}years old.`
-    }
-  }
-  
-  class Employee extends Person {
-    constructor(name, age,jobTitle) {
-      super(name);
-    this.empage=age;
-	this.empjobtitle=jobTitle;
-    }
-    greet() {
-      return `Hello,my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`
-    }
-  }
-  
-  const myPerson  = new Person("Alice",25);
- //document.getElementById("demo").innerHTML = myPerson.greet();
-//const Person=new Person(Alice,25)
 
-//const Employee=new Employee()
-//Alice" and age 25
-// Do not change code below this line
- window.Person = Person;
- window.Employee = Employee;
+class Square extends Rectangle {
+	constructor(side){
+    super(side, side);
+    this._side = side;
+	}
+	getPerimeter(){
+		 return 4 * this._side;
+	}
+	
+}
+const rectangle = new Rectangle(5, 10);
+console.log(rectangle.width); // Output: 5
+console.log(rectangle.height); // Output: 10
+console.log(rectangle.getArea()); // Output: 50
+
+const square = new Square(7);
+console.log(square.width); // Output: 7
+console.log(square.height); // Output: 7
+console.log(square.getArea()); // Output: 49
+console.log(square.getPerimeter()); // Output: 28
+// Do not change the code below this line
+window.Rectangle = Rectangle;
+window.Square = Square;
+
